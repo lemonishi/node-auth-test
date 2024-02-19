@@ -7,8 +7,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require("bcryptjs");
 
-const mongoDb =
-  "mongodb+srv://admin:qZytXYtZxYzMbwCd@cluster0.zuujwjo.mongodb.net/node_auth?retryWrites=true&w=majority";
+const mongoDb = process.env.MONGODB_URI;
 mongoose.connect(mongoDb);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "mongo connection error"));
